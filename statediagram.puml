@@ -8,18 +8,18 @@ skinparam state {
   BorderColor Blue
 }
 
-state "MenuState\n----\nPhát nhạc sảnh\nChờ người chơi" as MenuState
-state "PlayState\n----\nCập nhật game\nTăng dần độ khó" as PlayState
-state "GameOverState\n----\nLưu & Hiển thị điểm\nPhát âm thanh Crash" as GameOverState
+state "MenuState\n----\nTheme Song" as MenuState
+state "PlayState\n----\nIncreasing\nDIFFICULTY" as PlayState
+state "GameOverState\n----\nSave & Score Display\nCRASH Sound Effect" as GameOverState
 
-[*] -down-> MenuState : Mở game
+[*] -down-> MenuState : Open Game
 
-MenuState -down-> PlayState : Phím SPACE
-PlayState -down-> GameOverState : Xảy ra va chạm
+MenuState -down-> PlayState : Space Key
+PlayState -down-> GameOverState : CRASH
 
-GameOverState -left-> MenuState : Phím bất kỳ
+GameOverState -left-> MenuState : ANY KEY
 
-MenuState -right-> [*] : Thoát (QUIT)
-PlayState -right-> [*] : Thoát (QUIT)
-GameOverState -right-> [*] : Thoát (QUIT)
+MenuState -right-> [*] : QUIT \nGame
+PlayState -right-> [*] : Quit \nGame
+GameOverState -right-> [*] : Quit Game
 @enduml

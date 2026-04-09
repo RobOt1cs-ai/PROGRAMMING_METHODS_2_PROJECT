@@ -1,0 +1,25 @@
+@startuml
+skinparam nodesep 80
+skinparam ranksep 70
+skinparam linetype ortho
+
+skinparam state {
+  BackgroundColor LightBlue
+  BorderColor Blue
+}
+
+state "MenuState\n----\nPhát nhạc sảnh\nChờ người chơi" as MenuState
+state "PlayState\n----\nCập nhật game\nTăng dần độ khó" as PlayState
+state "GameOverState\n----\nLưu & Hiển thị điểm\nPhát âm thanh Crash" as GameOverState
+
+[*] -down-> MenuState : Mở game
+
+MenuState -down-> PlayState : Phím SPACE
+PlayState -down-> GameOverState : Xảy ra va chạm
+
+GameOverState -left-> MenuState : Phím bất kỳ
+
+MenuState -right-> [*] : Thoát (QUIT)
+PlayState -right-> [*] : Thoát (QUIT)
+GameOverState -right-> [*] : Thoát (QUIT)
+@enduml

@@ -1,4 +1,4 @@
-# 🚗 Car Racing Dodge Game (Python + Pygame)
+# 🚗 Car Racing Dodge Game
 
 ![Python](https://img.shields.io/badge/Python-3.11-blue)
 ![Pygame](https://img.shields.io/badge/Pygame-2.x-green)
@@ -47,8 +47,8 @@ PM2_PROJECT/
 ## ⚙️ Installation
 
 ```bash
-git clone https://github.com/your-username/car-racing-game.git
-cd car-racing-game
+git clone https://github.com/RobOt1cs-ai/PROGRAMMING_METHODS_2_PROJECT.git
+cd PM2_FINAL
 ```
 
 ### Create Virtual Environment
@@ -102,89 +102,40 @@ python main.py
 
 ## 🧠 Gameplay
 
-* Drive within 3 lanes and avoid enemy cars
+* Drive within 3 lanes (left, middle, right) and avoid enemy cars
 * Enemy cars randomly spawn and may switch lanes
-* Speed increases as score increases
+* Speed of map and enemies increases as score increases
 * Game ends on collision
 * Scores are saved automatically
 
 ---
 
-## 🖼️ Screenshots (How to Add Real Ones)
+## 📸 Screenshots of The Game
 
-### 📸 Step-by-step
-
-1. Run your game:
-
-```bash
-python main.py
-```
-
-2. Take screenshots:
-
-* Press **Windows + Shift + S** (Windows)
-* Or **Cmd + Shift + 4** (Mac)
-
-3. Save images in:
-
-```
-assets/screenshots/
-```
-
-4. Add them below:
-
-```
-![Menu](assets/screenshots/menu.png)
-![Gameplay](assets/screenshots/gameplay.png)
-![Game Over](assets/screenshots/gameover.png)
-```
+<table align="center">
+  <tr>
+    <td align="center">
+      <img src="PM2_FINAL/DEMO-IMGS_AND_VIDS/MENU_GAME.png" width="450"><br>
+      <em>Fig 1: Menu Game</em>
+    </td>
+    <td align="center">
+      <img src="PM2_FINAL/DEMO-IMGS_AND_VIDS/GAME_PLAY.png" width="450"><br>
+      <em>Fig 2: Gameplay</em>
+    </td>
+    <td align="center">
+      <img src="PM2_FINAL/DEMO-IMGS_AND_VIDS/GAME_OVER.png" width="450"><br>
+      <em>Fig 3: Game Over</em>
+    </td>
+  </tr>
+</table>
 
 ---
 
-## 🎥 Demo Video (How to Create One)
+## 🎥 GAMEPLAY DEMO VIDEO
 
-### 🎬 Quick Recording
+### DEMO VIDEO
 
-Use:
-
-* OBS Studio (recommended)
-* Xbox Game Bar (Windows: `Win + Alt + R`)
-
-### 📌 What to Show (Script)
-
-**Scene 1 – Intro (3–5 sec)**
-
-* Show menu screen
-* Text: *"Python Car Racing Game"*
-
-**Scene 2 – Gameplay (10–20 sec)**
-
-* Start game
-* Show movement (left/right, speed control)
-* Show enemies spawning
-
-**Scene 3 – Difficulty Scaling**
-
-* Let score increase
-* Show faster gameplay
-
-**Scene 4 – Crash**
-
-* Hit an enemy car
-* Show Game Over screen
-
-**Scene 5 – High Scores**
-
-* Highlight leaderboard
-
-### Upload
-
-* Upload to YouTube or Google Drive
-* Add link here:
-
-```
-https://your-video-link.com
-```
+https://drive.google.com/file/d/12_hqMcbO_oK0qSl9dXBIXoNR7ofQFQV2/view
 
 ---
 
@@ -208,48 +159,7 @@ Clean separation of:
 ```python
 enemy_speed = 5 + (score ** 0.5) * 0.08
 ```
-
 ---
-
-## 🧾 Git Best Practices (Evidence)
-
-### ✅ Commit Examples
-
-```
-feat: add enemy spawning system
-fix: correct collision detection bug
-refactor: improve state management structure
-```
-
-### ✅ Branching Strategy
-
-* `main` → stable version
-* `feature/*` → new features
-* `fix/*` → bug fixes
-
-### ✅ Workflow
-
-```bash
-git checkout -b feature/enemy-ai
-git add .
-git commit -m "feat: implement enemy lane switching"
-git push origin feature/enemy-ai
-```
-
-### 📸 Add Git Proof (IMPORTANT)
-
-Take screenshots of:
-
-* Your commit history (VS Code / GitHub)
-* Your branches
-* Pull requests (if any)
-
-Add here:
-
-```
-![Commits](assets/screenshots/git_commits.png)
-![Branches](assets/screenshots/git_branches.png)
-```
 
 ---
 
@@ -267,6 +177,7 @@ Add here:
 
 * Collision may feel strict at high speed
 * No pause feature yet
+* Map quality
 
 ---
 
@@ -278,8 +189,17 @@ MIT License
 
 ## 👨‍💻 Author
 
-Your Name
-https://github.com/your-username
+### TUAN
+
+https://github.com/RobOt1cs-ai
+
+### DAT
+
+https://github.com/enty4rever
+
+### KHOA
+
+https://github.com/11525016-sketch
 
 ---
 

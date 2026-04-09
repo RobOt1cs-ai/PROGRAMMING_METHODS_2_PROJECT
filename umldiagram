@@ -1,0 +1,65 @@
+@startuml
+skinparam nodesep 60
+skinparam ranksep 50
+skinparam linetype ortho
+
+skinparam class {
+  BackgroundColor White
+  ArrowColor Black
+  BorderColor Black
+  FontSize 12
+}
+
+package "State System" <<Rectangle>> {
+    class Game {
+      +WIDTH: int
+      +HEIGHT: int
+      +running: bool
+      +change_state()
+      +run()
+    }
+
+    abstract class State {
+      +game: Game
+      +handle()
+      +update()
+      +render()
+    }
+    
+    class MenuState
+    class PlayState {
+      +score: int
+      +save_scores()
+    }
+    class GameOverState
+}
+
+package "Gameplay Entities" <<Rectangle>> {
+    class PlayerCar {
+      +speed: float
+      +update()
+    }
+    class EnemyManager {
+      +enemies: list
+      +spawn_enemy()
+    }
+    class EnemyCar {
+      +speed: float
+    }
+}
+
+' --- Thiết lập quan hệ ---
+
+Game *-- State
+State <|-- MenuState
+State <|-- PlayState
+State <|-- GameOverState
+
+PlayState *-- PlayerCar
+PlayState *-- EnemyManager
+EnemyManager *-- EnemyCar
+
+MenuState -[hidden]right- PlayState
+PlayState -[hidden]right- GameOverState
+
+@enduml

@@ -20,14 +20,27 @@ class MenuState(State):
 
     def handle(self):
         for e in pygame.event.get():
-            if e.type == pygame.QUIT: self.game.running = False
-            if e.type == pygame.KEYDOWN and e.key == pygame.K_SPACE: self.game.change_state("PLAY")
+            if e.type == pygame.QUIT:
+                self.game.running = False
+            if e.type == pygame.KEYDOWN and e.key == pygame.K_SPACE:
+                self.game.change_state("PLAY")
 
     def render(self):
         self.game.screen.fill((0, 0, 0))
-        txt = self.game.font.render("PRESS SPACE TO START", True, (255, 255, 255))
-        x, y = (self.game.WIDTH - txt.get_width()) // 2, (self.game.HEIGHT - txt.get_height()) // 2
-        self.game.screen.blit(txt, (x, y))
+
+        # Multi-line centered text
+        lines = [
+            "CAR RACING DODGE GAME",
+            "PRESS SPACE TO START"
+        ]
+
+        y = self.game.HEIGHT // 2 - len(lines) * 20
+
+        for line in lines:
+            txt = self.game.font.render(line, True, (255, 255, 255))
+            x = (self.game.WIDTH - txt.get_width()) // 2
+            self.game.screen.blit(txt, (x, y))
+            y += 60
 
 
 class PlayState(State):
@@ -53,7 +66,8 @@ class PlayState(State):
 
     def handle(self):
         for e in pygame.event.get():
-            if e.type == pygame.QUIT: self.game.running = False
+            if e.type == pygame.QUIT:
+                self.game.running = False
 
     def update(self):
         self.player.update(self.score)
@@ -61,11 +75,10 @@ class PlayState(State):
         self.enemies.update(self.game.HEIGHT)
         self.score += 1
 
-       # Arcade-style scaling (smooth + accelerating difficulty)
+        # Arcade-style scaling
         bg_speed = 6 + (self.score ** 0.5) * 0.08
         enemy_speed = 5 + (self.score ** 0.5) * 0.08
 
-        # Optional caps to prevent it from getting insane
         self.bg.speed = min(15, bg_speed)
 
         for e in self.enemies.enemies:
@@ -80,6 +93,7 @@ class PlayState(State):
         self.bg.draw(self.game.screen, self.game.left, self.game.right, self.game.HEIGHT)
         self.enemies.draw(self.game.screen)
         self.player.draw(self.game.screen)
+
         score_text = self.game.font.render(f"Score: {self.score}", True, (255, 255, 255))
         self.game.screen.blit(score_text, (120, 10))
 
@@ -87,11 +101,14 @@ class PlayState(State):
 class GameOverState(State):
     def handle(self):
         for e in pygame.event.get():
-            if e.type == pygame.QUIT: self.game.running = False
-            if e.type == pygame.KEYDOWN: self.game.change_state("MENU")
+            if e.type == pygame.QUIT:
+                self.game.running = False
+            if e.type == pygame.KEYDOWN:
+                self.game.change_state("MENU")
 
     def render(self):
         self.game.screen.fill((0, 0, 0))
+
         crashed_txt = self.game.font.render("CRASHED!", True, (255, 0, 0))
         x, y = (self.game.WIDTH - crashed_txt.get_width()) // 2, 150
         self.game.screen.blit(crashed_txt, (x, y))
@@ -105,11 +122,8 @@ class GameOverState(State):
             x_score = (self.game.WIDTH - score_txt.get_width()) // 2
             self.game.screen.blit(score_txt, (x_score, y + 140 + i * 50))
 
-        # Calculate position AFTER last score
         last_score_y = y + 140 + (len(self.game.states["PLAY"].highscores) - 1) * 50
 
         instruction = self.game.font.render("PRESS ANY KEY TO RETURN TO MENU", True, (255, 255, 255))
         x_inst = (self.game.WIDTH - instruction.get_width()) // 2
-
-        # Add spacing (e.g., 80px below last score)
         self.game.screen.blit(instruction, (x_inst, last_score_y + 80))

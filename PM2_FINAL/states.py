@@ -76,8 +76,8 @@ class PlayState(State):
         self.score += 1
 
         # Arcade-style scaling
-        bg_speed = 6 + (self.score ** 0.5) * 0.08
-        enemy_speed = 5 + (self.score ** 0.5) * 0.08
+        bg_speed = 6 + (self.score ** 0.5) * 0.25
+        enemy_speed = 5 + (self.score ** 0.5) * 0.1
 
         self.bg.speed = min(15, bg_speed)
 

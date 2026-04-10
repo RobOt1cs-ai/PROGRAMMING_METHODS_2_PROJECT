@@ -7,7 +7,7 @@ class PlayerCar:
         self.left, self.right = left, right
         self.x, self.y = 555, 480
         self.width, self.height = self.image.get_width(), self.image.get_height()
-        self.base_speed, self.speed = 6, 6
+        self.speed = 6
         self.min_speed, self.max_speed = 2, 10
 
     def update(self, score):

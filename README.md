@@ -161,6 +161,12 @@ enemy_speed = 5 + (score ** 0.5) * 0.08
 ```
 ---
 
+## 🐞 Known Issues
+
+* Collision may feel strict at high speed
+* No pause feature yet
+* Map quality
+
 ---
 
 ## 🚀 Future Improvements
@@ -170,14 +176,6 @@ enemy_speed = 5 + (score ** 0.5) * 0.08
 * Pause system
 * Mobile version
 * More sound effects
-
----
-
-## 🐞 Known Issues
-
-* Collision may feel strict at high speed
-* No pause feature yet
-* Map quality
 
 ---
 

@@ -8,11 +8,11 @@ class PlayerCar:
         self.x, self.y = 555, 480
         self.width, self.height = self.image.get_width(), self.image.get_height()
         self.base_speed, self.speed = 6, 6
-        self.min_speed, self.max_speed = 2, 15
+        self.min_speed, self.max_speed = 2, 10
 
     def update(self, score):
         # Scale max speed with score (balanced)
-        self.max_speed = 15 + (score ** 0.5) * 0.06
+        self.max_speed = 10 + (score ** 0.5) * 0.08
 
         keys = pygame.key.get_pressed()
 

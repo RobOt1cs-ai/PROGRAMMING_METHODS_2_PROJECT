@@ -20,7 +20,7 @@ A fast-paced **arcade-style car dodging game** built with **Python** and **Pygam
 
 ---
 
-## 🗂️ Project Structure
+## 🗂️ Project Structure, UML and State Diagram 
 
 ```
 PM2_PROJECT/
@@ -40,7 +40,20 @@ PM2_PROJECT/
 ├── main.py
 ├── scores.txt
 └── README.md
+
 ```
+<table align="center">
+  <tr>
+    <td align="center">
+      <img src="PM2_FINAL/DEMO-IMGS_AND_VIDS/umldiagram.png" width="400"><br>
+      <em>Fig 1: UML Diagram</em>
+    </td>
+    <td align="center">
+      <img src="PM2_FINAL/DEMO-IMGS_AND_VIDS/statediagram.png" width="400"><br>
+      <em>Fig 2: State Diagram</em>
+    </td>
+  </tr>
+</table>
 
 ---
 

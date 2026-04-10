@@ -170,7 +170,7 @@ Clean separation of:
 ### Difficulty Scaling
 
 ```python
-enemy_speed = 5 + (score ** 0.5) * 0.08
+enemy_speed = 5 + (self.score ** 0.5) * 0.1
 ```
 ---
 

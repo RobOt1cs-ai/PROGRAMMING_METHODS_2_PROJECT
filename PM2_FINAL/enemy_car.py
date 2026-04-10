@@ -5,7 +5,7 @@ class EnemyCar:
     def __init__(self, images, lanes):
         self.image = pygame.transform.scale(random.choice(images), (60, 120))
         self.mask = pygame.mask.from_surface(self.image)
-        self.lanes, self.speed, self.switch_speed = lanes, random.randint(5, 9), 4
+        self.lanes, self.speed, self.switch_speed = lanes, random.randint(5, 9), 5
         self.x, self.y = random.choice(self.lanes), -random.randint(100, 600)
         self.current_lane, self.target_lane = self.x, self.x
 
@@ -13,7 +13,7 @@ class EnemyCar:
         self.y += self.speed
 
         # Randomly decide to switch lanes
-        if random.random() < 0.005:
+        if random.random() < 0.01:
             self.target_lane = random.choice(self.lanes)
 
         # Smooth movement toward target lane
